@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Next.js build output
+.next/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.* 
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+
+# npm package-lock
+package-lock.json
+
+# React-specific
+coverage/
