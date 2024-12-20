@@ -12,7 +12,7 @@ export default {
         white: '#fff',
         paper: '#f4edea',
         menu: '#fcf8f7',
-        primaryMain: '  ',
+        primaryMain: '#003366',
         primaryLight: '#002244',
         primaryDark: '#001F33',
         secondaryMain: '#FFCC00',

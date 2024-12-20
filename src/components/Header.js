@@ -39,6 +39,10 @@ const Header = () => {
       label: 'Partnership',
       key: 'partner',
     },
+    {
+      label: 'Jobs',
+      key: 'jobs',
+    },
   ];
 
   const [current, setCurrent] = useState('mail');
