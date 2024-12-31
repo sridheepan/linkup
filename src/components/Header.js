@@ -48,13 +48,12 @@ const Header = () => {
 
   const [current, setCurrent] = useState('mail');
   const [drawerVisible, setDrawerVisible] = useState(false); // State to control drawer visibility
+  const router = useRouter();
 
   const onClick = (e) => {
-    console.log('click ', e);
     setCurrent(e.key);
+    router.push('/book');
   };
-
-  const router = useRouter();
 
   const handleDrawerToggle = () => {
     setDrawerVisible(!drawerVisible); // Toggle the drawer visibility
@@ -63,7 +62,9 @@ const Header = () => {
   return (
     <div className='w-screen flex bg-menu items-center h-[70px] md:px-[100px] sm:px-[40px] transition-all duration-200'>
       {/* Logo on the left */}
-      <div className='logo bg-menu w-[8rem] mx-4 cursor-pointer ' onClick={() => router.push('/')}>
+      <div
+        className='logo bg-menu w-[8rem] mx-4 md:mx-0 cursor-pointer '
+        onClick={() => router.push('/')}>
         <img src='/assets/linkUp.png' alt='Logo' className='cursor-pointer hover:brightness-95' />
       </div>
 
