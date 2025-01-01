@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       <body className='bg-paper text-gray-900'>
         <Header />
         <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
         {/* <Menu /> */}
       </body>
     </html>

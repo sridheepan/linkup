@@ -45,7 +45,7 @@ const page = () => {
           />
         </div>
       )}
-      <Divider style={{ marginBottom: '0' }}></Divider>
+      {/* <Divider style={{ marginBottom: '0' }}></Divider> */}
     </div>
   );
 };

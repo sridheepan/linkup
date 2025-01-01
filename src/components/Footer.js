@@ -1,6 +1,6 @@
 const Footer = () => (
-  <footer className='p-4 bg-gray-800 text-white text-center'>
-    <p>&copy; 2024 My Next.js Website</p>
+  <footer className='p-4 text-primaryMain text-center text-sm bg-menu '>
+    <p>&copy; 2025 LinkUp | Connect with global purchasers in one click.</p>
   </footer>
 );
 
