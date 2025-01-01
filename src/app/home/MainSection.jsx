@@ -31,7 +31,7 @@ const MainSection = () => {
             <p className='flex-wrap line text-[2.7rem] font-light'>Your Purchase,</p>
             <p className='text-[3.8rem] font-bold'>Simplified!</p>
             <span className='text-[1.1rem] mt-4 font-extralight'>
-              Connect with global purchasers in one click.
+              Connect with global merchandisers in one click.
             </span>
           </div>
           {/* Button */}
