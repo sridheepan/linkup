@@ -1,10 +1,26 @@
 'use client';
 import { Divider } from 'antd';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const page = () => {
   const router = useRouter();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Mobile view for screens <= 768px
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add resize event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div>
@@ -13,7 +29,7 @@ const page = () => {
         <div className='w-full md:w-1/2 flex flex-col text-[4.25rem] font-extrabold text-primaryMain md:p-[50px]'>
           <div className='flex flex-col'>
             <p className=' flex-wrap line'>Your Purchase,</p>
-            <p>Simplified...</p>
+            <p>Simplified!</p>
             <span className='text-[1.1rem] my-8 font-extralight'>
               Connect with global purchasers in one click.
             </span>
@@ -32,14 +48,16 @@ const page = () => {
           </div>
         </div>
         {/* Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          className='hidden md:block md:w-1/2 rounded-3xl shadow-lg object-cover'>
-          <source src='/assets/home-banner.mp4' type='video/mp4' />
-          Your browser does not support the video tag.
-        </video>
+        {!isMobile && (
+          <video
+            autoPlay
+            muted
+            loop
+            className='hidden md:block md:w-1/2 rounded-3xl shadow-lg object-cover'>
+            <source src='/assets/home-banner.mp4' type='video/mp4' />
+            Your browser does not support the video tag.
+          </video>
+        )}
       </div>
     </div>
   );
