@@ -24,7 +24,7 @@ const page = () => {
 
   return (
     <div>
-      <div className='relative mx-auto flex h-[calc(100vh-120px)] px-[40px]'>
+      <div className='relative mx-auto flex h-[calc(100vh-120px)]'>
         {/* title */}
         <div className='w-full md:w-1/2 flex flex-col text-[4.25rem] font-extrabold text-primaryMain md:p-[50px]'>
           <div className='flex flex-col'>

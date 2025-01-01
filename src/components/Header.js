@@ -53,6 +53,7 @@ const Header = () => {
   const onClick = (e) => {
     setCurrent(e.key);
     router.push('/book');
+    handleDrawerToggle();
   };
 
   const handleDrawerToggle = () => {
