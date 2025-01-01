@@ -29,26 +29,23 @@ const AppointmentScheduler = () => {
   return (
     <div className='w-full md:h-full flex flex-col-reverse md:flex-row items-start justify-between md:items-start md:justify-center'>
       {/* Instruction Section */}
-      <div className='w-full h-[30%] md:w-[30%] md:h-full md:pt-[66px] text-primaryMain mb-4 md:mb-0'>
+      <div className='w-full h-[30%] md:w-[30%] md:h-full md:pt-[66px] text-grey700 mb-4 md:mb-0'>
         <h1 className='md:text-2xl text-lg font-bold md:mb-4 mb-1 hidden md:block'>
           Scheduling Instructions
         </h1>
-        <p className='md:text-[1.1rem] text-sm md:my-8 font-extralight md:mb-4 mb-1 italic'>
-          {`${
-            !isMobile
-              ? 'Please schedule your virtual shopping session with your shopping assistant.'
-              : ''
-          } All times are
-          shown in **Indian Standard Time (IST)**, so make sure to adjust accordingly if you're in a
-          different time zone.`}
+        <p className='md:text-[1.1rem] text-sm md:my-8 md:mb-4 mb-1'>
+          {`All times are provided in `}
+          <strong
+            className='italic font-black text-black'
+            dangerouslySetInnerHTML={{ __html: `Indian Standard Time (IST)* ` }}
+          />
+          <span className='ml-[0.1rem]'>
+            to ensure your shopping session is booked during the daytime in IST.{' '}
+          </span>
         </p>
-        <p className='md:text-[1.1rem] text-sm md:my-8 font-extralight md:mb-4 mb-1 italic'>
-          Each session is for <strong>1 hour</strong>. If needed, your session can be extended by an
-          additional 30 minutes.
-        </p>
-        <p className='md:text-[1.1rem] text-sm md:my-8 font-extralight md:mb-4 mb-1 italic'>
-          Once you schedule your session, you'll receive a confirmation email with the meeting link.
-          Feel free to reach out if you have any questions before your session.
+        <p className='md:text-[1.1rem] text-sm md:my-8 md:mb-4 mb-1'>
+          Once your session is confirmed, you will receive a confirmation email with the meeting
+          link. If you have any questions, don't hesitate to reach out.
         </p>
       </div>
 

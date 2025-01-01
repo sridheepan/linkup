@@ -1,7 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './globals.css';
-import Menu from '@/components/Menu';
 
 export const metadata = {
   title: 'LinkUp | Connect with global purchasers in one click',
@@ -20,7 +19,7 @@ export default function Layout({ children }) {
 
       <body className='bg-paper text-gray-900'>
         <Header />
-        <main className='p-4'>{children}</main>
+        <main>{children}</main>
         {/* <Footer /> */}
         {/* <Menu /> */}
       </body>

@@ -2,11 +2,14 @@
 import { Divider } from 'antd';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import MainSection from './home/MainSection';
+import AppointmentScheduler from '@/components/book/AppointmentScheduler';
+import { InlineWidget } from 'react-calendly';
 
 const page = () => {
-  const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
 
+  // Handle screen size detection
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Mobile view for screens <= 768px
@@ -23,42 +26,26 @@ const page = () => {
   }, []);
 
   return (
-    <div>
-      <div className='relative mx-auto flex h-[calc(100vh-120px)]'>
-        {/* title */}
-        <div className='w-full md:w-1/2 flex flex-col text-[4.25rem] font-extrabold text-primaryMain md:p-[50px]'>
-          <div className='flex flex-col'>
-            <p className=' flex-wrap line'>Your Purchase,</p>
-            <p>Simplified!</p>
-            <span className='text-[1.1rem] my-8 font-extralight'>
-              Connect with global purchasers in one click.
-            </span>
-          </div>
-          {/* Button */}
-          <div className='mt-5 w-full md:w-1/2'>
-            <button
-              className='bg-secondaryHigh text-center text-white text-[2.25rem] font-bold py-3 px-6 rounded-2xl hover:bg-secondaryMain transition ease-in-out duration-300 shadow-lg w-full cursor-pointer'
-              onClick={() => router.push('/book')}>
-              Link Up
-            </button>
-            <Divider>OR</Divider>
-            <button className='bg-primaryDark text-center text-white text-[2.25rem] font-bold py-3 px-6 rounded-2xl hover:bg-primaryMain transition ease-in-out duration-300 shadow-lg w-full cursor-pointer '>
-              Join Us
-            </button>
-          </div>
+    <div className='w-screen p-4'>
+      <MainSection />
+      <Divider></Divider>
+      {isMobile ? (
+        <AppointmentScheduler />
+      ) : (
+        <div className='w-full'>
+          <InlineWidget
+            url='https://calendly.com/go-linkup/30min'
+            pageSettings={{
+              backgroundColor: '#fcf8f7',
+              hideEventTypeDetails: isMobile,
+              hideLandingPageDetails: false,
+              primaryColor: '00a2ff',
+              textColor: '4d5055',
+            }}
+          />
         </div>
-        {/* Video */}
-        {!isMobile && (
-          <video
-            autoPlay
-            muted
-            loop
-            className='hidden md:block md:w-1/2 rounded-3xl shadow-lg object-cover'>
-            <source src='/assets/home-banner.mp4' type='video/mp4' />
-            Your browser does not support the video tag.
-          </video>
-        )}
-      </div>
+      )}
+      <Divider style={{ marginBottom: '0' }}></Divider>
     </div>
   );
 };
