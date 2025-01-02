@@ -32,11 +32,11 @@ const MainSection = () => {
     <Fragment>
       <div className='relative mx-auto flex h-screen'>
         {/* title */}
-        <div className='w-full px-[30px] md:w-[50%] flex flex-col text-[4.25rem] font-extrabold text-paper md:px-[150px] pt-16'>
-          <div className='flex flex-col'>
-            <p className='flex-wrap line text-[4rem] font-semibold'>Your Purchase,</p>
-            <p className='text-[4rem] font-bold mt-[-1rem]'>Simplified!</p>
-            <span className='text-[1.8rem] mt-1 font-extralight'>
+        <div className='w-full px-[30px] md:w-[70%] flex flex-col text-[4.25rem] font-extrabold text-paper md:px-[150px] pt-16'>
+          <div className='flex flex-col w-full'>
+            <p className='text-[3.5rem] font-semibold'>Your Purchase,</p>
+            <p className='text-[3.5rem] font-bold mt-[-1rem]'>Simplified!</p>
+            <span className='text-[1.5rem] mt-1 font-extralight'>
               Connect with global merchandisers in one click.
             </span>
           </div>
