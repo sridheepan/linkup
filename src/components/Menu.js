@@ -2,7 +2,7 @@ import React from 'react';
 
 const Menu = () => {
   return (
-    <div className='bg-menu min-w-[225px] max-w-[225px] h-screen pl-[2rem] hidden md:block transition-all duration-300'>
+    <div className='bg-none min-w-[225px] max-w-[225px] h-screen pl-[2rem] hidden md:block transition-all duration-300'>
       <div className='flex flex-col h-full'>
         {/* Logo */}
         <div className='flex pt-6 w-full'>

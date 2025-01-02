@@ -27,16 +27,14 @@ export default {
     },
     colors: {
       black: '#000',
-      white: '#fff',
-      paper: '#f4edea',
+      paper: '#ffffff',
       menu: '#fcf8f7',
-      primaryMain: '#003366',
-      primaryLight: '#002244',
-      primaryDark: '#001F33',
-      secondaryMain: '#FFCC00',
-      secondaryHigh: '#FFB400',
-      secondaryLight: '#FFEC99',
-      secondaryMuted: '#FFD700',
+      primaryMain: '#04A3E3', // Cerulean
+      primaryLight: '#7CD4F1', // Spray
+      primaryDark: '#5DAFD1', // Shakespeare
+      secondaryMain: '#A1A2A2', // Edward
+      secondaryDark: '#606161',
+      secondaryLight: '#C6C7C7',
       grey50: '#fafafa',
       grey100: '#f5f5f5',
       grey200: '#eeeeee',
@@ -47,7 +45,11 @@ export default {
       grey900: '#212121',
       greyBg: '#eef2f6',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };

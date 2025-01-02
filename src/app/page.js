@@ -26,10 +26,10 @@ const page = () => {
   }, []);
 
   return (
-    <div className='w-screen p-4'>
+    <div className='w-full bg-primaryMain overflow-x-hidden'>
       <MainSection />
-      <Divider></Divider>
-      {isMobile ? (
+      {/* <Divider></Divider> */}
+      {/* {isMobile ? (
         <AppointmentScheduler />
       ) : (
         <div className='w-full'>
@@ -44,7 +44,7 @@ const page = () => {
             }}
           />
         </div>
-      )}
+      )} */}
       {/* <Divider style={{ marginBottom: '0' }}></Divider> */}
     </div>
   );
