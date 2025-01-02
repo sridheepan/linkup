@@ -43,7 +43,7 @@ const MainSection = () => {
           {/* Button */}
           <div className='w-full'>
             <button
-              className='bg-primaryLight text-center text-white text-[2.25rem] font-bold py-3 px-6 rounded-2xl hover:brightness-90 transition ease-in-out duration-300 shadow-lg w-full cursor-pointer'
+              className='bg-primaryLight text-center text-white text-[2.25rem] font-bold py-3 px-6 rounded-2xl hover:brightness-90 transition ease-in-out duration-300 shadow-lg w-full cursor-pointer animate-bounce'
               onClick={() => router.push('/book')}>
               Link Up
             </button>
