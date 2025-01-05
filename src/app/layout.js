@@ -16,6 +16,13 @@ export default function Layout({ children }) {
           href='https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap'
           rel='stylesheet'
         />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'
+          rel='stylesheet'
+        />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'
+          rel='stylesheet'></link>
       </head>
 
       <body className='bg-paper text-gray-900 font-sans'>

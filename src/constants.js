@@ -25,14 +25,14 @@ export const menuItems = [
       },
     ],
   },
-  //   {
-  //     label: 'How it works',
-  //     key: 'howitworks',
-  //   },
   {
-    label: 'Partnership',
-    key: 'partner',
+    label: 'How we work',
+    key: 'howework',
   },
+  // {
+  //   label: 'Partnership',
+  //   key: 'partner',
+  // },
   {
     label: 'Jobs',
     key: 'jobs',

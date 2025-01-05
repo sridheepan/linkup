@@ -8,6 +8,9 @@ import { InlineWidget } from 'react-calendly';
 import Header from '@/components/home/Header';
 import Footer from '@/components/common/Footer';
 import Banner from '@/components/home/Banner';
+import TextBanner from '@/components/home/TextBanner';
+import MenuSection from '@/components/home/MenuSection';
+import WorksBanner from '@/components/home/WorksBanner';
 
 const page = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,6 +35,9 @@ const page = () => {
     <div>
       <Header />
       <Banner />
+      <TextBanner />
+      <MenuSection />
+      <WorksBanner />
       <Footer />
     </div>
   );

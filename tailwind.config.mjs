@@ -48,7 +48,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
+        sans: ['Nunito Sans', 'sans-serif'],
+        cursive: ['Dancing Script', 'cursive'],
+        playwrite: ['Playwrite HR Lijeva', 'sans-serif'], // Playwrite font
+        ubuntu: ['Ubuntu', 'sans-serif'], // Ubuntu font
       },
     },
   },
