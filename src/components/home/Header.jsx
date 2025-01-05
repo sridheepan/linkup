@@ -1,7 +1,6 @@
 'use client';
 import { menuItems } from '@/constants';
 import { ConfigProvider, Menu } from 'antd';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import { CurrencySwitcher } from '../common/CurrencySelector';
@@ -39,12 +38,11 @@ const Header = () => {
       }`}>
       {/* Logo */}
       <div className='relative flex items-center h-10 cursor-pointer my-auto'>
-        <Image
+        <img
           src={scrolled ? '/assets/logo-tr.png' : '/assets/logo-white.png'}
-          alt='no image'
-          layout='fill'
-          objectFit='contain'
-          objectPosition='left'
+          alt='logo'
+          className='relative w-full h-full object-contain'
+          style={{ objectPosition: 'left' }}
         />
       </div>
       {/* Nav */}

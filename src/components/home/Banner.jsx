@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 
 const Banner = () => {
@@ -6,12 +5,20 @@ const Banner = () => {
     <div className='relative h-[600px] md:h-[650px] md:p-20 p-5'>
       {/* Image for mobile screens */}
       <div className='absolute inset-0 md:hidden'>
-        <Image src='/assets/heromobile.jpg' alt='hero mobile' layout='fill' objectFit='cover' />
+        <img
+          src='/assets/heromobile.jpg'
+          alt='hero desktop'
+          className='absolute inset-0 w-full h-full object-cover'
+        />
       </div>
 
       {/* Image for desktop screens */}
       <div className='absolute inset-0 hidden md:block'>
-        <Image src='/assets/hero.jpg' alt='hero desktop' layout='fill' objectFit='cover' />
+        <img
+          src='/assets/hero.jpg'
+          alt='hero desktop'
+          className='absolute inset-0 w-full h-full object-cover'
+        />
       </div>
       <div className='relative top-[40%] md:w-[40%] text-left font-extrabold leading-[3.5rem]'>
         <p className='md:text-[3.3rem] text-[3rem] opacity-50'>Not sure..</p>
