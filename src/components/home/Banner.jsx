@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <section className='relative h-[600px] md:h-[650px] md:p-20 p-5'>
+    <section className='relative h-[400px] md:h-[650px] md:p-20 p-5'>
       {/* Image for mobile screens */}
       <div className='absolute inset-0 md:hidden'>
         <img
@@ -21,8 +21,8 @@ const Banner = () => {
         />
       </div>
       <div className='relative top-[30%] md:top-[40%] text-left font-extrabold md:leading-[3.5rem] leading-[2.5rem] text-paper'>
-        <p className='md:text-[3.3rem] text-[2.2rem] opacity-50 text-paper'>Not sure..</p>
-        <p className='md:text-[4rem] text-[2.7rem] text-paper'>What to choose ?</p>
+        <p className='md:text-[3.3rem] text-[2.1rem] opacity-50 text-paper'>Not sure..</p>
+        <p className='md:text-[4rem] text-[2.5rem] text-paper'>What to choose ?</p>
         <p className='md:text-[1.5rem] text-[1rem] font-extralight mt-3 leading-[1.4rem] text-paper'>
           Connect, Select, and Shop with Your Own Personal Shopper — Anytime, Anywhere!
         </p>
