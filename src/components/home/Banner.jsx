@@ -6,12 +6,12 @@ const Banner = () => {
     <div className='relative h-[600px] md:h-[650px] md:p-20 p-5'>
       {/* Image for mobile screens */}
       <div className='absolute inset-0 md:hidden'>
-        <Image src='/assets/her-mobile-2.jpg' alt='hero mobile' layout='fill' objectFit='cover' />
+        <Image src='/assets/heromobile.jpg' alt='hero mobile' layout='fill' objectFit='cover' />
       </div>
 
       {/* Image for desktop screens */}
       <div className='absolute inset-0 hidden md:block'>
-        <Image src='/assets/hero-5.jpg' alt='hero desktop' layout='fill' objectFit='cover' />
+        <Image src='/assets/hero.jpg' alt='hero desktop' layout='fill' objectFit='cover' />
       </div>
       <div className='relative top-[40%] md:w-[40%] text-left font-extrabold leading-[3.5rem]'>
         <p className='md:text-[3.3rem] text-[3rem] opacity-50'>Not sure..</p>
