@@ -20,9 +20,9 @@ const Banner = () => {
           className='absolute inset-0 w-full h-full object-cover'
         />
       </div>
-      <div className='relative top-[30%] md:top-[40%] text-left font-extrabold md:leading-[3.5rem] leading-[2.8rem] text-paper'>
-        <p className='md:text-[3.3rem] text-[2.5rem] opacity-50 text-paper'>Not sure..</p>
-        <p className='md:text-[4rem] text-[2.8rem] text-paper'>What to choose ?</p>
+      <div className='relative top-[30%] md:top-[40%] text-left font-extrabold md:leading-[3.5rem] leading-[2.5rem] text-paper'>
+        <p className='md:text-[3.3rem] text-[2.2rem] opacity-50 text-paper'>Not sure..</p>
+        <p className='md:text-[4rem] text-[2.7rem] text-paper'>What to choose ?</p>
         <p className='md:text-[1.5rem] text-[1rem] font-extralight mt-3 leading-[1.4rem] text-paper'>
           Connect, Select, and Shop with Your Own Personal Shopper — Anytime, Anywhere!
         </p>
