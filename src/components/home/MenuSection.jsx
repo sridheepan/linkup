@@ -3,7 +3,7 @@ import MenuCard from './MenuCard';
 
 const MenuSection = () => {
   return (
-    <div className='flex items-center justify-center md:p-20 p-5 pt-0 md:pt-0'>
+    <div className='flex items-center justify-center md:p-20 p-5'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-y-8 w-full h-full'>
         <div className='flex items-center justify-center'>
           <MenuCard
