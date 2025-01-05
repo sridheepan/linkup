@@ -168,7 +168,7 @@ const flags = {
   ZWL: 'https://flagcdn.com/w320/zw.png',
 };
 
-export function CurrencySwitcher({ mainClassName, showFullText }) {
+export function CurrencySwitcher({ scrolled, showFullText }) {
   const { currency, setCurrency, rates, ratesFetched } = useCurrency();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -180,26 +180,32 @@ export function CurrencySwitcher({ mainClassName, showFullText }) {
   };
 
   return (
-    <div className={`${mainClassName}`}>
+    <div className={`border-2 border-grey100  rounded-full hover:border-primaryMain`}>
       {/* Button to show current selected currency */}
       <button
         onClick={toggleDropdown}
-        className='flex items-center px-4 py-2 text-sm focus:outline-none transition-all duration-500 text-secondaryDark w-[7rem]'>
+        className='flex items-center px-4 py-2 text-sm focus:outline-none transition-all duration-500 text-secondaryDark'>
         <img src={flags[currency]} alt={currency} className='w-6 h-5 mr-2 rounded-md' />
-        {showFullText
-          ? currency === 'USD'
-            ? 'USD'
-            : currency === 'EUR'
-            ? 'Euro'
-            : currency
-          : currency}
+        <span className={`font-bold ${scrolled ? 'text-main' : 'text-paper'}`}>
+          {showFullText
+            ? currency === 'USD'
+              ? 'USD'
+              : currency === 'EUR'
+              ? 'Euro'
+              : currency
+            : currency}
+        </span>
         {/* Show down arrow when closed, up arrow when open */}
-        {isOpen ? <FaChevronUp className='ml-2' /> : <FaChevronDown className='ml-2' />}
+        {/* {isOpen ? (
+          <FaChevronUp className='ml-2 transition-all duration-500' />
+        ) : (
+          <FaChevronDown className='ml-2 transition-all duration-500' />
+        )} */}
       </button>
 
       {/* Dropdown menu */}
       {isOpen && ratesFetched && (
-        <div className='absolute z-10 bg-paper w-[7rem] h-[300px] bg-white rounded-lg shadow-lg overflow-auto text-secondaryDark '>
+        <div className='absolute z-10 mt-1 bg-paper w-[5.8rem] h-[300px] bg-white rounded-lg shadow-lg overflow-auto text-secondaryDark '>
           {Object.keys(rates).map((currencyCode) => (
             <button
               key={currencyCode}
@@ -210,7 +216,7 @@ export function CurrencySwitcher({ mainClassName, showFullText }) {
                 alt={currencyCode}
                 className='w-6 h-5 mr-2 rounded-md object-fit'
               />
-              {showFullText ? currencyCode : currencyCode.slice(0, 2)}
+              <span>{showFullText ? currencyCode : currencyCode.slice(0, 2)}</span>
             </button>
           ))}
         </div>

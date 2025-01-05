@@ -3,7 +3,7 @@ import { MenuOutlined } from '@ant-design/icons';
 import { ConfigProvider, Drawer, Menu } from 'antd';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-import { CurrencySwitcher } from './common/CurrencySelector';
+import { CurrencySwitcher } from './CurrencySelector';
 
 const Header = () => {
   const items = [
@@ -62,7 +62,7 @@ const Header = () => {
   };
 
   return (
-    <div className='w-screen flex bg-transparent items-center justify-between h-[120px] md:px-[150px] sm:px-[40px] transition-all duration-200'>
+    <header className='w-screen flex bg-transparent items-center justify-between h-[120px] md:px-[150px] sm:px-[40px] transition-all duration-200'>
       {/* Logo on the left */}
       {/* Mobile Hamburger Icon */}
       <div className='sm:hidden bg-none mx-4'>
@@ -125,7 +125,7 @@ const Header = () => {
           style={{ border: 'none', fontSize: '20px' }}
         />
       </Drawer>
-    </div>
+    </header>
   );
 };
 

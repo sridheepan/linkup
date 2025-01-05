@@ -9,7 +9,7 @@ const CustomCalendar = () => {
   // Function to handle hover effect and circle shape on hover
   const tileHoverClassName = ({ date, view }) => {
     if (view === 'month') {
-      return 'hover:bg-primaryLight hover:text-paper rounded-full w-[50px] h-[75px] pr-2'; // Circle on hover with background color and white text
+      return 'hover:bg-primaryLight hover:text-paper rounded-full w-[50px] h-[75px] m-[5px]'; // Circle on hover with background color and white text
     }
     return ''; // No special style for non-month views
   };

@@ -43,12 +43,14 @@ const MainSection = () => {
           {/* Button */}
           <div className='w-full'>
             <button
-              className='bg-primaryLight text-center text-white text-[2.25rem] font-bold py-3 px-6 rounded-2xl hover:brightness-90 transition ease-in-out duration-300 shadow-lg w-full cursor-pointer animate-bounce'
+              className='bg-primaryLight max-w-[400px] text-center text-white text-[2.25rem] font-bold py-3 px-6 rounded-2xl hover:brightness-90 transition ease-in-out duration-300 shadow-lg w-full cursor-pointer animate-bounce'
               onClick={() => router.push('/book')}>
               Link Up
             </button>
-            <Divider style={{ marginBottom: '0' }}>OR</Divider>
-            <button className='bg-primaryLight text-center text-white text-[2.25rem] font-bold py-3 px-6 rounded-2xl hover:brightness-90 transition ease-in-out duration-300 shadow-lg w-full cursor-pointer'>
+            <div className='max-w-[400px]'>
+              <Divider style={{ marginBottom: '0' }}>OR</Divider>
+            </div>
+            <button className='bg-primaryLight max-w-[400px] text-center text-white text-[2.25rem] font-bold py-3 px-6 rounded-2xl hover:brightness-90 transition ease-in-out duration-300 shadow-lg w-full cursor-pointer'>
               Join Us
             </button>
           </div>

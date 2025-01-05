@@ -1,5 +1,5 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/home/Header';
+import Footer from '../components/common/Footer';
 import './globals.css';
 import { CurrencyProvider } from '@/contexts/CurrencyContext';
 
@@ -13,16 +13,16 @@ export default function Layout({ children }) {
     <html lang='en'>
       <head>
         <link
-          href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap'
+          href='https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap'
           rel='stylesheet'
         />
       </head>
 
       <body className='bg-paper text-gray-900 font-sans'>
         <CurrencyProvider>
-          <Header />
+          {/* <Header /> */}
           <main>{children}</main>
-          <Footer />
+          {/* <Footer /> */}
         </CurrencyProvider>
       </body>
     </html>

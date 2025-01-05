@@ -5,6 +5,9 @@ import React, { useEffect, useState } from 'react';
 import MainSection from './home/MainSection';
 import AppointmentScheduler from '@/components/book/AppointmentScheduler';
 import { InlineWidget } from 'react-calendly';
+import Header from '@/components/home/Header';
+import Footer from '@/components/common/Footer';
+import Banner from '@/components/home/Banner';
 
 const page = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -26,26 +29,10 @@ const page = () => {
   }, []);
 
   return (
-    <div className='w-full bg-primaryMain overflow-x-hidden'>
-      <MainSection />
-      {/* <Divider></Divider> */}
-      {/* {isMobile ? (
-        <AppointmentScheduler />
-      ) : (
-        <div className='w-full'>
-          <InlineWidget
-            url='https://calendly.com/go-linkup/30min'
-            pageSettings={{
-              backgroundColor: '#fcf8f7',
-              hideEventTypeDetails: isMobile,
-              hideLandingPageDetails: false,
-              primaryColor: '00a2ff',
-              textColor: '4d5055',
-            }}
-          />
-        </div>
-      )} */}
-      {/* <Divider style={{ marginBottom: '0' }}></Divider> */}
+    <div>
+      <Header />
+      <Banner />
+      <Footer />
     </div>
   );
 };
