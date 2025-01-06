@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Banner = () => {
@@ -8,9 +9,13 @@ const Banner = () => {
         <img
           src='/assets/hero-f.png'
           alt='hero-desktop'
-          className='absolute w-64 h-64 z-5 top-16 left-1/2 transform -translate-x-1/2 z-10'
+          className='absolute w-[300px] h-[300px] z-5 top-16 left-1/2 transform -translate-x-1/2 z-10'
         />
-        <img src='/assets/bg-mob2.png' alt='bg-mobile' className='absolute top-0 right-0' />
+        <img
+          src='/assets/bg-mob2.png'
+          alt='bg-mobile'
+          className='absolute top-0 right-0 w-[300px] h-[450px]'
+        />
       </div>
 
       {/* Image for desktop screens */}
@@ -29,16 +34,16 @@ const Banner = () => {
           Not sure..
         </p>
         <p className='md:text-[4rem] text-[2.5rem] md:text-paper text-mainB'>What to choose ?</p>
-        <p className='md:text-[1.5rem] text-[1rem] font-extralight mt-3 leading-[1rem] text-secondaryMain whitespace-nowrap text-[clamp(1rem, 5vw, 1.5rem)]'>
+        <p className='md:text-[1.5rem] text-[0.8rem] font-extralight mt-3 leading-[1rem] text-secondaryMain'>
           <strong className='font-bold'>Connect</strong>,{' '}
           <strong className='font-bold'>Select</strong>, and{' '}
           <strong className='font-bold'>Shop</strong> with Your Own Personal Shopper
         </p>
-        <p className='md:text-[1.5rem] text-[1rem] font-extralight mt-3 leading-[0.5rem] text-secondaryMain'>
+        <p className='md:text-[1.5rem] text-[0.8rem] font-extralight mt-3 leading-[0.5rem] text-secondaryMain'>
           Anytime, Anywhere!
         </p>
         <button
-          className={`md:text-main md:bg-grey300 text-paper bg-mainB px-10 py-3 md:py-4 shadow-md rounded-2xl md:rounded-3xl md:mt-10 mt-5 hover:shadow-xl active:scale-90 md:text-[2.5rem] text-[2rem] transition duration-150 w-[50%] md:w-[40%] hover:brightness-110 font-extrabold`}>
+          className={`md:text-main md:bg-grey300 text-paper bg-mainB py-3 md:py-4 shadow-md rounded-2xl md:rounded-3xl md:mt-10 mt-5 hover:shadow-xl active:scale-90 md:text-[2.5rem] text-[2rem] transition duration-150 w-[50%] md:w-[40%] hover:brightness-110 font-extrabold`}>
           LinkUp
         </button>
       </div>
