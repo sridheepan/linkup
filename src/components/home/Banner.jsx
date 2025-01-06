@@ -29,7 +29,7 @@ const Banner = () => {
           Not sure..
         </p>
         <p className='md:text-[4rem] text-[2.5rem] md:text-paper text-mainB'>What to choose ?</p>
-        <p className='md:text-[1.5rem] text-[1rem] font-extralight mt-3 leading-[1rem] text-secondaryMain'>
+        <p className='md:text-[1.5rem] text-[1rem] font-extralight mt-3 leading-[1rem] text-secondaryMain whitespace-nowrap text-[clamp(1rem, 5vw, 1.5rem)]'>
           <strong className='font-bold'>Connect</strong>,{' '}
           <strong className='font-bold'>Select</strong>, and{' '}
           <strong className='font-bold'>Shop</strong> with Your Own Personal Shopper
