@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <section className='relative h-[700px] md:h-[650px] md:p-20 p-5'>
+    <section className='relative h-[650px] md:h-[650px] md:p-20 p-5'>
       {/* Image for mobile screens */}
       <div className='absolute inset-0 md:hidden'>
         <img
