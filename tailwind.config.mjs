@@ -30,6 +30,7 @@ export default {
       paper: '#ffffff',
       menu: '#fcf8f7',
       main: '#173C61',
+      mainB: '#3F7BFE',
       primaryMain: '#04A3E3', // Cerulean
       primaryLight: '#7CD4F1', // Spray
       primaryDark: '#5DAFD1', // Shakespeare

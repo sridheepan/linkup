@@ -186,7 +186,7 @@ export function CurrencySwitcher({ scrolled, showFullText }) {
         onClick={toggleDropdown}
         className='flex items-center px-4 py-2 text-sm focus:outline-none transition-all duration-500 text-secondaryDark'>
         <img src={flags[currency]} alt={currency} className='w-6 h-5 mr-2 rounded-md' />
-        <span className={`font-bold ${scrolled ? 'text-main' : 'text-paper'}`}>
+        <span className={`font-bold ${scrolled ? 'md:text-main text-mainB' : 'text-paper'}`}>
           {showFullText
             ? currency === 'USD'
               ? 'USD'

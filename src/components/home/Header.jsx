@@ -38,12 +38,22 @@ const Header = () => {
       }`}>
       {/* Logo */}
       <div className='relative flex items-center h-10 cursor-pointer my-auto'>
-        <img
-          src={scrolled ? '/assets/logo-tr.png' : '/assets/logo-white.png'}
-          alt='logo'
-          className='relative w-full h-full object-contain'
-          style={{ objectPosition: 'left' }}
-        />
+        <div className='hidden md:block'>
+          <img
+            src={scrolled ? '/assets/logo-tr.png' : '/assets/logo-white.png'}
+            alt='logo'
+            className='relative h-10 object-contain'
+            style={{ objectPosition: 'left' }}
+          />
+        </div>
+        <div className='md:hidden'>
+          <img
+            src='/assets/logo-color.png'
+            alt='logo'
+            className='relative h-10 object-contain'
+            style={{ objectPosition: 'left' }}
+          />
+        </div>
       </div>
       {/* Nav */}
       <div className='flex items-center justify-end'>
