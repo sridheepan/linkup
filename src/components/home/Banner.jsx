@@ -1,7 +1,13 @@
-import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import LinkCalendar from '../common/LinkCalendar';
 
 const Banner = () => {
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [checkInDate, setCheckInDate] = useState(new Date());
+  const [checkOutDate, setCheckOutDate] = useState(new Date());
+  const [numberOfAdults, setNumberOfAdults] = useState(0);
+  const [numberOfChildren, setNumberOfChildren] = useState(0);
+
   return (
     <section className='relative h-[650px] md:h-[650px] md:p-20 p-5'>
       {/* Image for mobile screens */}
@@ -43,10 +49,27 @@ const Banner = () => {
           Anytime, Anywhere!
         </p>
         <button
-          className={`md:text-main md:bg-grey300 text-paper bg-mainB py-3 md:py-4 shadow-md rounded-2xl md:rounded-3xl md:mt-10 mt-5 hover:shadow-xl active:scale-90 md:text-[2.5rem] text-[2rem] transition duration-150 w-[50%] md:w-[40%] hover:brightness-110 font-extrabold`}>
+          className={`md:text-main md:bg-grey300 text-paper bg-mainB py-3 md:py-4 shadow-md rounded-2xl md:rounded-3xl md:mt-10 mt-5 hover:shadow-xl active:scale-90 md:text-[2.5rem] text-[2rem] transition duration-150 w-[50%] md:w-[40%] hover:brightness-110 font-extrabold`}
+          onClick={setShowCalendar}>
           LinkUp
         </button>
       </div>
+      {showCalendar && (
+        <LinkCalendar
+          className='datepicker'
+          close={() => setShowCalendar(false)}
+          checkInDate={{ value: checkInDate, setValue: setCheckInDate }}
+          checkOutDate={{ value: checkOutDate, setValue: setCheckOutDate }}
+          numberOfAdults={{
+            value: numberOfAdults,
+            setValue: setNumberOfAdults,
+          }}
+          numberOfChildren={{
+            value: numberOfChildren,
+            setValue: setNumberOfChildren,
+          }}
+        />
+      )}
     </section>
   );
 };
