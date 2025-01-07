@@ -35,32 +35,21 @@ const ConfirmationForm = ({ duration, goBack }) => {
         </Space.Compact>
       </Form.Item>
 
+      <Form.Item label='Additional Participant Email(s)' name='guestEmails' className='mb-3'>
+        <Space.Compact style={{ width: 'calc(100%)' }}>
+          <Button icon={<FaMailBulk className='text-mainB' size={20} />} size='large' />
+          <Input placeholder='ex: a@a.com, b@b.com' size='large' />
+        </Space.Compact>
+      </Form.Item>
+
       <Form.Item
         label='Phone Number'
         name='phone'
-        rules={[{ required: true, message: 'Please input your name!' }]}
+        rules={[{ required: true, message: 'Please input your Phone Number!' }]}
         className='mb-3'>
         <Space.Compact style={{ width: 'calc(100%' }}>
           <Button icon={<FaPhone className='text-mainB' size={16} />} size='large' />
           <Input size='large' />
-        </Space.Compact>
-      </Form.Item>
-
-      <Form.Item
-        label='Delivery Address'
-        name='address'
-        rules={[{ required: true, message: 'Please input your name!' }]}
-        className='mb-3'>
-        <Space.Compact style={{ width: 'calc(100%' }}>
-          <Button icon={<FaHouse className='text-mainB' size={18} />} size='large' />
-          <Input size='large' />
-        </Space.Compact>
-      </Form.Item>
-
-      <Form.Item label='Guest Emails' name='guestEmails' className='mb-3 w-[500px]'>
-        <Space.Compact style={{ width: 'calc(100% - 135px)' }}>
-          <Button icon={<FaMailBulk className='text-mainB' size={20} />} size='large' />
-          <Input placeholder='ex: a@a.com, b@b.com' size='large' />
         </Space.Compact>
       </Form.Item>
 
@@ -75,6 +64,17 @@ const ConfirmationForm = ({ duration, goBack }) => {
         <Space.Compact style={{ width: 'calc(100%)' }}>
           <Button icon={<FaShoppingCart className='text-mainB' size={20} />} size='large' />
           <Input placeholder='sarees, flute' size='large' />
+        </Space.Compact>
+      </Form.Item>
+
+      <Form.Item
+        label='Delivery Address'
+        name='address'
+        rules={[{ required: true, message: 'Please input your Delivery Address!' }]}
+        className='mb-3'>
+        <Space.Compact style={{ width: 'calc(100%' }}>
+          <Button icon={<FaHouse className='text-mainB' size={18} />} size='large' />
+          <Input size='large' />
         </Space.Compact>
       </Form.Item>
 

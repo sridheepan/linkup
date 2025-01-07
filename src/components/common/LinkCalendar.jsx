@@ -49,32 +49,6 @@ const LinkCalendar = ({ close }) => {
     return userTime.format('h:mm A');
   };
 
-  //   const generateTimeRanges = (duration) => {
-  //     const timeRangesArray = [];
-  //     let startTime = moment.tz('2023-01-01 09:00', 'Asia/Kolkata');
-  //     const endTime = moment.tz('2023-01-01 19:00', 'Asia/Kolkata');
-  //     const currentISTTime = moment.tz('Asia/Kolkata');
-
-  //     while (startTime.isBefore(endTime)) {
-  //       const end = startTime.clone().add(duration, 'hour');
-  //       const isPast = currentISTTime.isAfter(end);
-
-  //       const start = convertTimeToUserTimezone(startTime);
-  //       const endFormatted = convertTimeToUserTimezone(end);
-
-  //       timeRangesArray.push({
-  //         startTime: startTime.format('YYYY-MM-DD HH:mm'),
-  //         endTime: end.format('YYYY-MM-DD HH:mm'),
-  //         timeRange: `${start} - ${endFormatted}`,
-  //         disabled: isPast,
-  //       });
-
-  //       startTime = startTime.add(duration, 'hour');
-  //     }
-
-  //     setTimeRanges(timeRangesArray);
-  //   };
-
   const generateTimeRanges = (duration) => {
     const timeRangesArray = [];
     let startTime = moment.tz('2023-01-01 09:00', 'Asia/Kolkata'); // 9 AM IST with a valid date
@@ -129,7 +103,7 @@ const LinkCalendar = ({ close }) => {
 
   return (
     <div
-      className={`h-screen  overflow-scroll absolute bg-grey50 top-0 left-1/2 transform -translate-x-1/2 w-full p-2 z-50 transition-all duration-300 ease-in-out ${
+      className={`h-screen overflow-scroll absolute bg-grey50 top-0 left-1/2 transform -translate-x-1/2 w-full p-2 z-50 transition-all duration-300 ease-in-out ${
         visible ? 'transform translate-y-0' : 'transform translate-y-full'
       }`}>
       <div
@@ -205,17 +179,17 @@ const LinkCalendar = ({ close }) => {
       <div
         className={`transition-transform duration-300 transform ${
           formVisible ? 'translate-x-0' : '-translate-x-full'
-        } absolute left-0 top-0 w-full bg-paper p-5 pt-14 z-60 h-screen`}>
+        } absolute left-0 top-0 w-full bg-paper p-5 pt-14 z-60`}>
         <div className='flex w-full items-center gap-x-6 px-4 sticky'>
           <div className='text-paper flex items-center justify-center h-7 w-7 bg-paper font-extrabold hover rounded-lg focus:outline-none hover:brightness-110 active:scale-90'></div>
           <div className='flex flex-col'>
-            <h4 className='text-2xl text-black'>Personal Shopper 1-on-1</h4>
-            <span className='text-grey700 text-[0.9rem] flex' style={{ fontWeight: 100 }}>
+            <h4 className='text-xl text-black'>Personal Shopper 1-on-1</h4>
+            <span className='text-grey700 text-[0.8rem] flex' style={{ fontWeight: 100 }}>
               <p>{date ? moment(date).format('dddd, MMMM D') : 'Not set'}</p>{' '}
               <p className='mx-1'> - </p>
               <p>{selectedTimeRange?.timeRange}</p>
             </span>
-            <p className='text-grey700 text-[0.9rem]' style={{ fontWeight: 100 }}>
+            <p className='text-grey700 text-[0.8rem]' style={{ fontWeight: 100 }}>
               {`(GMT${offset}) ${timeZoneFull.replace('Time', '')} - ${cityName}`}
             </p>
           </div>
