@@ -14,6 +14,7 @@ import WorksBanner from '@/components/home/WorksBanner';
 
 const page = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
 
   // Handle screen size detection
   useEffect(() => {
@@ -31,10 +32,24 @@ const page = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Disable/Enable scroll based on showCalendar state
+  useEffect(() => {
+    if (showCalendar) {
+      document.body.style.overflow = 'hidden'; // Disable scroll
+    } else {
+      document.body.style.overflow = ''; // Enable scroll
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      document.body.style.overflow = ''; // Reset overflow on unmount
+    };
+  }, [showCalendar]);
+
   return (
     <div>
       <Header />
-      <Banner />
+      <Banner showCalendar={showCalendar} setShowCalendar={setShowCalendar} />
       <TextBanner />
       <MenuSection />
       <WorksBanner />

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import LinkCalendar from '../common/LinkCalendar';
 
-const Banner = () => {
-  const [showCalendar, setShowCalendar] = useState(false);
+const Banner = ({ showCalendar, setShowCalendar }) => {
   const [checkInDate, setCheckInDate] = useState(new Date());
   const [checkOutDate, setCheckOutDate] = useState(new Date());
   const [numberOfAdults, setNumberOfAdults] = useState(0);
@@ -20,7 +19,7 @@ const Banner = () => {
         <img
           src='/assets/bg-mob2.png'
           alt='bg-mobile'
-          className='absolute top-0 right-0 w-[300px] h-[450px]'
+          className='absolute top-0 right-0 w-[70%] h-[450px]'
         />
       </div>
 
