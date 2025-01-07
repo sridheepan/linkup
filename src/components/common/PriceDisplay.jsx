@@ -1,7 +1,7 @@
 import { useCurrency } from '../../contexts/CurrencyContext'; // Assuming CurrencyContext is in the same directory
 
-const PriceDisplay = ({ priceInUSD }) => {
+export const PriceDisplay = ({ priceInUSD }) => {
   const { currency, convertCurrency } = useCurrency();
   const convertedPrice = convertCurrency(priceInUSD, 'USD', currency);
-  return <div>{`Price in ${currency}: ${convertedPrice.toFixed(2)}`}</div>;
+  return <div>{`${convertedPrice.toFixed(2)} ${currency}`}</div>;
 };

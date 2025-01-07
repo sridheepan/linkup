@@ -1,11 +1,13 @@
 import React from 'react';
-import { Button, Form, Input, Space } from 'antd';
+import { Button, Divider, Form, Input, Space } from 'antd';
 import { FaMailBulk, FaPhone, FaShoppingCart } from 'react-icons/fa';
 import { FaHouse, FaShop } from 'react-icons/fa6';
 import { IoIosPerson } from 'react-icons/io';
 import { MdMail } from 'react-icons/md';
+import { AiFillDollarCircle } from 'react-icons/ai';
+import { PriceDisplay } from './PriceDisplay';
 
-const ConfirmationForm = ({ duration, goBack }) => {
+const ConfirmationForm = ({ duration, goBack, total }) => {
   return (
     <Form
       className='p-3'
@@ -87,7 +89,7 @@ const ConfirmationForm = ({ duration, goBack }) => {
           Back
         </Button>
         <Button htmlType='submit' className='w-full h-10 text-lg bg-mainB text-paper'>
-          Submit
+          Proceed To Payment
         </Button>
       </div>
     </Form>

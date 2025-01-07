@@ -8,6 +8,8 @@ import moment from 'moment-timezone';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import ConfirmationForm from './ConfirmationForm';
+import { PriceDisplay } from './PriceDisplay';
+import { AiFillDollarCircle } from 'react-icons/ai';
 
 const LinkCalendar = ({ close }) => {
   const [visible, setVisible] = useState(false);
@@ -16,6 +18,7 @@ const LinkCalendar = ({ close }) => {
   const [date, setDate] = useState(new Date());
   const [formVisible, setFormVisible] = useState(false);
   const [selectedTag, setSelectedTag] = useState('1');
+  const [total, setTotal] = useState(0);
   const [selectedTimeRange, setSelectedTimeRange] = useState(null);
 
   const isSmallScreen = useMediaQuery('(max-width: 36rem)');
@@ -94,7 +97,17 @@ const LinkCalendar = ({ close }) => {
 
   useEffect(() => {
     generateTimeRanges(duration);
+    calculateTotal(duration);
   }, [duration]);
+
+  const calculateTotal = (duration) => {
+    if (duration == 1) {
+      setTotal(15);
+    } else if (duration > 1) {
+      const finalTotal = 15 + 10 * (duration - 1);
+      setTotal(finalTotal);
+    }
+  };
 
   const handleTimeRangeSelect = (timeRange) => {
     setSelectedTimeRange(timeRange);
@@ -203,6 +216,15 @@ const LinkCalendar = ({ close }) => {
             Google Meet video conference info added after booking
           </p>
         </div>
+        \{' '}
+        <div className='flex w-full items-center gap-x-6 px-4 mt-4'>
+          <button className='text-paper flex items-center justify-center h-7 w-7 font-extrabold hover rounded-lg focus:outline-none hover:brightness-110 active:scale-90'>
+            <AiFillDollarCircle className='text-mainB' size={22} />
+          </button>
+          <div className='text-grey700 text-[0.9rem]' style={{ fontWeight: 100 }}>
+            <PriceDisplay priceInUSD={total} />
+          </div>
+        </div>
         <Divider />
         {/* Section 3 */}
         <div className='flex w-full items-center gap-x-6 px-4 mt-4'>
@@ -216,7 +238,7 @@ const LinkCalendar = ({ close }) => {
           </p>
         </div>
         {/* Section 4 */}
-        <ConfirmationForm duration={duration} goBack={() => setFormVisible(false)} />
+        <ConfirmationForm duration={duration} goBack={() => setFormVisible(false)} total={total} />
       </div>
     </div>
   );
