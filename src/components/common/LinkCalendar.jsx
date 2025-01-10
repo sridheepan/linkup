@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar } from 'react-date-range';
 import { FaRegAddressCard } from 'react-icons/fa';
 import { SiGooglemeet } from 'react-icons/si';
-import { Divider, Tag } from 'antd'; // Correct import for Input and Button
+import { Divider, Tag } from 'antd';
 import { useMediaQuery } from '@react-hook/media-query';
 import moment from 'moment-timezone';
 import 'react-date-range/dist/styles.css';
@@ -49,7 +49,7 @@ const LinkCalendar = ({ close }) => {
   const convertTimeToUserTimezone = (startTime) => {
     const istTime = moment.tz(startTime, 'YYYY-MM-DD HH:mm', 'Asia/Kolkata');
     const userTime = istTime.clone().tz(moment.tz.guess());
-    return userTime.format('h:mm A');
+    return userTime.format('h:mma');
   };
 
   const generateTimeRanges = (duration) => {
@@ -110,6 +110,7 @@ const LinkCalendar = ({ close }) => {
   };
 
   const handleTimeRangeSelect = (timeRange) => {
+    console.log(timeRange);
     setSelectedTimeRange(timeRange);
     setFormVisible(true);
   };
@@ -238,7 +239,16 @@ const LinkCalendar = ({ close }) => {
           </p>
         </div>
         {/* Section 4 */}
-        <ConfirmationForm duration={duration} goBack={() => setFormVisible(false)} total={total} />
+        <ConfirmationForm
+          duration={duration}
+          goBack={() => setFormVisible(false)}
+          total={total}
+          startTime={selectedTimeRange?.startTime}
+          endTime={selectedTimeRange?.endTime}
+          timerange={selectedTimeRange?.timeRange}
+          timeZone={timeZone}
+          date={date}
+        />
       </div>
     </div>
   );
