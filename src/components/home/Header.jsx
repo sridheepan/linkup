@@ -33,56 +33,30 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full top-0 z-50 grid grid-cols-3 p-3 md:py-2 md:px-6 transition duration-300 ${
+      className={`w-full h-20 top-0 z-50 grid grid-cols-3 p-3 md:py-2 md:px-6 transition duration-300 ${
         scrolled ? 'bg-paper sticky shadow-md' : 'bg-transparent absolute'
       }`}>
       {/* Logo */}
       <div className='relative flex items-center h-10 cursor-pointer my-auto'>
         <div className='hidden md:block'>
           <img
-            src={scrolled ? '/assets/logo-tr.png' : '/assets/logo-white.png'}
+            src={scrolled ? '/assets/logo.png' : '/assets/logo-black.png'}
             alt='logo'
-            className='relative h-10 object-contain'
+            className='relative h-12 object-fit opacity-80'
             style={{ objectPosition: 'left' }}
           />
         </div>
         <div className='md:hidden'>
           <img
-            src='/assets/logo-color.png'
+            src={scrolled ? '/assets/logo.png' : '/assets/logo-black.png'}
             alt='logo'
-            className='relative h-10 object-contain'
+            className='relative h-12 object-contain'
             style={{ objectPosition: 'left' }}
           />
         </div>
       </div>
       {/* Nav */}
-      <div className='flex items-center justify-end'>
-        <ConfigProvider
-          theme={{
-            token: {
-              colorPrimary: scrolled ? '#173C61' : '#FFFFFF', // Change hover bar color
-              fontSize: 16, // Change font size
-              colorText: scrolled ? '#173C61' : '#FFFFFF',
-              fontWeightStrong: 2,
-            },
-          }}>
-          <Menu
-            onClick={onClick}
-            selectedKeys={[current]}
-            mode='horizontal'
-            items={menuItems}
-            style={{
-              backgroundColor: 'transparent',
-              boxShadow: 'none',
-              borderBottom: 0,
-              textTransform: 'uppercase',
-              color: '#193556',
-              fontWeight: 'bold',
-            }}
-            className='menu-center w-full items-center justify-center h-[70px] hidden md:flex'
-          />
-        </ConfigProvider>
-      </div>
+      <div className='flex items-center justify-end'></div>
       {/* Country - Currency */}
       <div className='flex items-center justify-end'>
         <CurrencySwitcher scrolled={scrolled} />

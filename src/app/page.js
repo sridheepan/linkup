@@ -1,16 +1,11 @@
 'use client';
-import { Divider } from 'antd';
-import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import MainSection from './home/MainSection';
-import AppointmentScheduler from '@/components/book/AppointmentScheduler';
-import { InlineWidget } from 'react-calendly';
+import Hero from '@/components/home/Hero';
+import { Features } from '@/components/home/Features';
+import { HowItWorks } from '@/components/home/HowItWorks';
+import { Testimonials } from '@/components/home/Testimonials';
+import { Footer } from '@/components/home/Footer';
 import Header from '@/components/home/Header';
-import Footer from '@/components/common/Footer';
-import Banner from '@/components/home/Banner';
-import TextBanner from '@/components/home/TextBanner';
-import MenuSection from '@/components/home/MenuSection';
-import WorksBanner from '@/components/home/WorksBanner';
 
 const page = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -33,12 +28,12 @@ const page = () => {
   }, []);
 
   return (
-    <div>
+    <div className='min-h-screen'>
       <Header />
-      <Banner showCalendar={showCalendar} setShowCalendar={setShowCalendar} />
-      <TextBanner />
-      <MenuSection />
-      <WorksBanner />
+      <Hero />
+      <Features />
+      <HowItWorks />
+      <Testimonials />
       <Footer />
     </div>
   );

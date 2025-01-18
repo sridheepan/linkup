@@ -41,7 +41,7 @@ const ConfirmationForm = ({ goBack, startTime, endTime, timerange, timeZone, dat
       startTime: startFormatted,
       endTime: endFormatted,
       eventDetails: {
-        summary: `Invitation: Personal Shopper from Go-LinkUp @ ${
+        summary: `Personal Shopper from Go-LinkUp @ ${
           selectedDateMoment.format('ddd MMM DD, YYYY') ?? ''
         } ${timerange} (${moment.tz(timeZone).zoneAbbr() ?? ''})`,
         description: `Shopping session with personal shopper for ${name ?? ''}.`,

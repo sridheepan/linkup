@@ -1,5 +1,3 @@
-import Header from '../components/home/Header';
-import Footer from '../components/common/Footer';
 import './globals.css';
 import { CurrencyProvider } from '@/contexts/CurrencyContext';
 
@@ -29,9 +27,7 @@ export default function Layout({ children }) {
 
       <body className='bg-paper text-gray-900 font-sans'>
         <CurrencyProvider>
-          {/* <Header /> */}
           <main>{children}</main>
-          {/* <Footer /> */}
         </CurrencyProvider>
       </body>
     </html>
