@@ -23,8 +23,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# npm package-lock
-package-lock.json
 
 # React-specific
 coverage/
