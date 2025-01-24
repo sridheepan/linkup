@@ -10,6 +10,7 @@ import 'react-date-range/dist/theme/default.css';
 import ConfirmationForm from './ConfirmationForm';
 import { PriceDisplay } from './PriceDisplay';
 import { AiFillDollarCircle } from 'react-icons/ai';
+import { Clock } from 'lucide-react';
 
 const LinkCalendar = ({ close }) => {
   const [visible, setVisible] = useState(false);
@@ -116,77 +117,82 @@ const LinkCalendar = ({ close }) => {
   };
 
   return (
-    <div
-      className={`h-screen overflow-scroll absolute bg-grey50 top-0 left-1/2 transform -translate-x-1/2 w-full p-2 z-50 transition-all duration-300 ease-in-out ${
-        visible ? 'transform translate-y-0' : 'transform translate-y-full'
-      }`}>
-      <div
-        className={`max-w-xl mx-auto flex flex-col items-center justify-center ${
-          formVisible ? 'hidden' : ''
-        }`}>
-        <div className='flex flex-row-reverse w-full items-center justify-between py-2 px-4'>
-          <h4 className='text-2xl font-extrabold my-3 text-mainB w-full text-center'>
-            Pick a Date
-          </h4>
-          <button
-            className='text-paper flex items-center justify-center bg-[red] font-extrabold hover h-[30px] w-[30px] rounded-lg focus:outline-none hover:brightness-110 active:scale-90'
-            onClick={close}>
-            x
-          </button>
+    <div className={`w-full min-h-[80vh] flex border-grey50 border-2 rounded-md shadow-md`}>
+      <div className='flex p-4'>
+        <div className='flex flex-col gap-y-2 border-r-2 border-grey100'>
+          <img
+            src={'/assets/logo-main.jpg'}
+            alt='logo'
+            className='relative h-20 w-20 object-fit opacity-80 rounded-full'
+            style={{ objectPosition: 'left' }}
+          />
+          <h1 className='font-bold text-md text-grey600 mr-8'>Book with a Personal Shopper</h1>
+          <p className='font-bold text-2xl'>{duration} hour Shopping</p>
+          <span className='flex gap-x-2 font-extrabold text-grey600'>
+            <Clock />
+            <p>{duration} hour(s)</p>
+          </span>
         </div>
-        <Calendar
-          date={date}
-          onChange={handleDateChange}
-          minDate={new Date(currentDate.setDate(currentDate.getDate() + 1))} // Set minDate to the next day
-          color='#3F7BFE'
-          classNames={{
-            monthAndYearWrapper: 'text-[1.1rem]',
-          }}
-          className='rounded-lg'
-          style={{
-            fontSize: isSmallScreen ? '1rem' : '1.3rem',
-            height: '100%',
-            width: isSmallScreen ? '350px' : '500px',
-          }}
-        />
+        <div className='border-r-2 border-grey100 p-4'>
+          <Calendar
+            date={date}
+            onChange={handleDateChange}
+            minDate={new Date(currentDate.setDate(currentDate.getDate() + 1))} // Set minDate to the next day
+            color='#3F7BFE'
+            classNames={{
+              monthAndYearWrapper: 'text-[1.5rem]',
+              button: 'rounded-full w-5 h-5', // Make the day fully rounded
+              rdrDay: 'rounded-full w-5 h-5',
+              rdrSelected: 'rounded-full',
 
-        <div className='flex items-center font-bold w-full p-4'>
-          <h2 className='text-md font-semibold text-mainB w-[30%]'>Select Duration: </h2>
-          <div className=' h-10 px-5 flex items-center overflow-scroll scrollbar-hidden'>
-            {hours.map((tag) => (
-              <Tag.CheckableTag
-                key={tag}
-                checked={selectedTag === tag}
-                style={{
-                  fontWeight: 500,
-                  fontSize: '0.9rem',
-                  backgroundColor: selectedTag === tag ? '' : 'lightgray',
-                  borderRadius: '6px',
-                  padding: 3,
-                  paddingRight: 6,
-                  paddingLeft: 6,
-                }}
-                onChange={() => handleDurationChange(tag)}>
-                {tag} hr{tag != '1' ? 's' : ''}
-              </Tag.CheckableTag>
-            ))}
-          </div>
+              daySelected: 'bg-primaryMain', // Replace the blue with your primary color
+              dayActive: 'bg-primaryMain hover:bg-primaryMain', // Make the hover effect with your primary color
+            }}
+            style={{
+              fontSize: isSmallScreen ? '1rem' : '1.1rem',
+              height: '100%',
+              width: isSmallScreen ? '350px' : '400px',
+            }}
+          />
         </div>
 
-        <div className='flex flex-col items-center font-bold pb-8 w-full px-12'>
-          {timeRanges.length > 0 ? (
-            timeRanges.map((timeRange, index) => (
-              <button
-                key={index}
-                className='bg-paper border border-mainB text-mainB w-full h-12 rounded-lg text-md mb-2 hover:brightness-110 active:scale-90 shadow-md hover:shadow-lg'
-                onClick={() => handleTimeRangeSelect(timeRange)}>
-                {timeRange.timeRange}
-              </button>
-            ))
-          ) : (
-            <p className='text-mainB font-semibold'>Select a duration to generate time ranges.</p>
-          )}
-        </div>
+        {/* <div className='flex items-center font-bold w-full p-4'>
+            <h2 className='text-md font-semibold text-mainB w-[30%]'>Select Duration: </h2>
+            <div className=' h-10 px-5 flex items-center overflow-scroll scrollbar-hidden'>
+              {hours.map((tag) => (
+                <Tag.CheckableTag
+                  key={tag}
+                  checked={selectedTag === tag}
+                  style={{
+                    fontWeight: 500,
+                    fontSize: '0.9rem',
+                    backgroundColor: selectedTag === tag ? '' : 'lightgray',
+                    borderRadius: '6px',
+                    padding: 3,
+                    paddingRight: 6,
+                    paddingLeft: 6,
+                  }}
+                  onChange={() => handleDurationChange(tag)}>
+                  {tag} hr{tag != '1' ? 's' : ''}
+                </Tag.CheckableTag>
+              ))}
+            </div>
+          </div> */}
+
+        {/* <div className='flex flex-col items-center font-bold pb-8 w-full px-12'>
+            {timeRanges.length > 0 ? (
+              timeRanges.map((timeRange, index) => (
+                <button
+                  key={index}
+                  className='bg-paper border border-mainB text-mainB w-full h-12 rounded-lg text-md mb-2 hover:brightness-110 active:scale-90 shadow-md hover:shadow-lg'
+                  onClick={() => handleTimeRangeSelect(timeRange)}>
+                  {timeRange.timeRange}
+                </button>
+              ))
+            ) : (
+              <p className='text-mainB font-semibold'>Select a duration to generate time ranges.</p>
+            )}
+          </div> */}
       </div>
 
       {/* Sliding Form Div */}
@@ -239,16 +245,16 @@ const LinkCalendar = ({ close }) => {
           </p>
         </div>
         {/* Section 4 */}
-        <ConfirmationForm
-          duration={duration}
-          goBack={() => setFormVisible(false)}
-          total={total}
-          startTime={selectedTimeRange?.startTime}
-          endTime={selectedTimeRange?.endTime}
-          timerange={selectedTimeRange?.timeRange}
-          timeZone={timeZone}
-          date={date}
-        />
+        {/* <ConfirmationForm
+            duration={duration}
+            goBack={() => setFormVisible(false)}
+            total={total}
+            startTime={selectedTimeRange?.startTime}
+            endTime={selectedTimeRange?.endTime}
+            timerange={selectedTimeRange?.timeRange}
+            timeZone={timeZone}
+            date={date}
+          /> */}
       </div>
     </div>
   );

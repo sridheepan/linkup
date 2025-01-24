@@ -1,8 +1,15 @@
 import React from 'react';
 import { Button } from '../ui/button';
 import { ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
+  const router = useRouter();
+
+  const handleBookSession = () => {
+    router.push('/booksession');
+  };
+
   return (
     <div className='relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-50 to-background'>
       <div className='absolute inset-0 z-0'>
@@ -12,12 +19,7 @@ const Hero = () => {
           muted
           playsInline
           className='w-full h-full object-cover opacity-50'
-          poster='https://images.unsplash.com/photo-1605810230434-7631ac76ec81'>
-          <source
-            src='https://cdn.coverr.co/videos/coverr-online-shopping-on-laptop-5244/1080p.mp4'
-            type='video/mp4'
-          />
-        </video>
+          poster='https://images.unsplash.com/photo-1605810230434-7631ac76ec81'></video>
         <div className='absolute inset-0 bg-gradient-to-t from-background to-transparent' />
       </div>
 
@@ -39,7 +41,10 @@ const Hero = () => {
         <div
           className='flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up'
           style={{ animationDelay: '0.6s' }}>
-          <Button size='lg' className='bg-[#2d78db] hover:bg-[#2463b5] text-paper'>
+          <Button
+            size='lg'
+            className='bg-[#2d78db] hover:bg-[#2463b5] text-paper'
+            onClick={handleBookSession}>
             Start Now
             <ChevronRight className='ml-2 h-4 w-4' />
           </Button>
