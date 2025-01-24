@@ -1,8 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useStripe } from '@stripe/react-stripe-js';
-
 const SuccessIcon = (
   <svg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
@@ -70,34 +67,6 @@ const STATUS_CONTENT_MAP = {
 };
 
 const CompletePage = () => {
-  const stripe = useStripe();
-
-  const [status, setStatus] = useState('default');
-  const [intentId, setIntentId] = useState(null);
-
-  useEffect(() => {
-    if (!stripe) {
-      return;
-    }
-
-    const clientSecret = new URLSearchParams(window.location.search).get(
-      'payment_intent_client_secret'
-    );
-
-    if (!clientSecret) {
-      return;
-    }
-
-    stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-      if (!paymentIntent) {
-        return;
-      }
-
-      setStatus(paymentIntent.status);
-      setIntentId(paymentIntent.id);
-    });
-  }, [stripe]);
-
   return (
     <div
       id='payment-status'
@@ -105,31 +74,31 @@ const CompletePage = () => {
       <div
         id='status-icon'
         className='flex justify-center items-center h-10 w-10 rounded-full'
-        style={{ backgroundColor: STATUS_CONTENT_MAP[status].iconColor }}>
-        {STATUS_CONTENT_MAP[status].icon}
+        style={{ backgroundColor: STATUS_CONTENT_MAP['succeeded'].iconColor }}>
+        {STATUS_CONTENT_MAP['succeeded'].icon}
       </div>
       <h2 id='status-text' className='text-center text-xl text-[#30313D]'>
-        {STATUS_CONTENT_MAP[status].text}
+        {STATUS_CONTENT_MAP['succeeded'].text}
       </h2>
-      {intentId && (
+      {true && (
         <div id='details-table' className='overflow-x-auto w-full'>
           <table className='w-full text-sm border-collapse'>
             <tbody>
               <tr>
                 <td className='font-semibold text-[#30313D]'>id</td>
-                <td className='text-right text-[#6D6E78]'>{intentId}</td>
+                <td className='text-right text-[#6D6E78]'>{'intentId'}</td>
               </tr>
               <tr>
                 <td className='font-semibold text-[#30313D]'>status</td>
-                <td className='text-right text-[#6D6E78]'>{status}</td>
+                <td className='text-right text-[#6D6E78]'>{'status'}</td>
               </tr>
             </tbody>
           </table>
         </div>
       )}
-      {intentId && (
+      {true && (
         <a
-          href={`https://dashboard.stripe.com/payments/${intentId}`}
+          href={`https://dashboard.stripe.com/payments/${'intentId'}`}
           id='view-details'
           target='_blank'
           className='text-[#0055DE] font-semibold text-lg flex items-center gap-2'>
